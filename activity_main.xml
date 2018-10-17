@@ -1,88 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:weightSum="4"
-    android:gravity="center"
-    android:paddingLeft="@dimen/app_small_margin"
-    android:paddingRight="@dimen/app_small_margin"
-    tools:context=".MainActivity"
-    android:background="@color/appColorBackground">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        android:layout_weight="1"
-        android:weightSum="3"
-        android:gravity="center">
-    <TextView
-        android:id="@+id/tvName"
+    tools:context=".MainActivity">
+
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="@dimen/font_size_large"
-        android:layout_weight="1"
-        android:text="@string/app_unique"
-        android:fontFamily="casual"
-        android:textSize="35sp"
-        android:textColor="@color/colorPrimaryDark" />
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_crop1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/app_normal_margin"
+        android:paddingRight="@dimen/app_normal_margin">
+
+        <TextView
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="cursive"
+            android:text="Login"
+            android:textAlignment="center"
+            android:textSize="@dimen/text_size" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:paddingLeft="@dimen/app_normal_margin"
+        android:paddingRight="@dimen/app_normal_margin">
 
         <Button
-            android:id="@+id/btSearch"
-            style="@style/ButtonSearch"
-            android:layout_weight="1"
-            />
+            android:id="@+id/btFacebook"
+            style="@style/ButtonStyle.Facebook"
+            android:layout_width="145dp"
+            android:layout_marginTop="@dimen/app_top_margin"
+            android:text="@string/bt_fbLogin" />
 
         <Button
-            android:id="@+id/btSettings"
-            style="@style/ButtonSettings"
-            android:layout_weight="1" />
+            android:id="@+id/btGoogle"
+            style="@style/ButtonStyle.Google"
+            android:layout_width="145dp"
+            android:layout_marginTop="@dimen/app_top_margin"
+            android:layout_marginStart="@dimen/app_normal_margin"
+            android:text="@string/bt_googleLogin" />
 
     </LinearLayout>
 
     <LinearLayout
-        style="@style/LinearLayoutStyle"
-        android:layout_weight="1"
-        android:weightSum="2" >
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/app_normal_margin"
+        android:paddingRight="@dimen/app_normal_margin">
+
+
+        <EditText
+            android:id="@+id/etEmail"
+            style="@style/EditTextStyle"
+            android:hint="@string/email_id"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/etPassword"
+            style="@style/EditTextStyle"
+            android:layout_marginTop="@dimen/app_normal_margin"
+            android:hint="@string/et_pwd"
+            android:inputType="textPassword" />
 
         <Button
-            android:id="@+id/btProfile"
-            style="@style/ButtonStyleHome"
-            android:text="@string/bt_profile" />
-        <Button
-            android:id="@+id/btTopReview"
-            style="@style/ButtonStyleHome"
-            android:text="@string/bt_topReviews"/>
+            android:id="@+id/bt_login"
+            style="@style/ButtonStyle.Primary"
+            android:layout_marginTop="@dimen/app_normal_margin"
+            android:text="@string/bt_login" />
 
+        <TextView
+            android:id="@+id/tv_forgotPwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_forgotPwd"
+            android:textColor="@color/colorPrimaryDark" />
     </LinearLayout>
 
-    <LinearLayout
-       style="@style/LinearLayoutStyle"
-        android:layout_weight="1">
-
-        <Button
-            android:id="@+id/btPlanAtrip"
-            style="@style/ButtonStyleHome"
-            android:text="@string/bt_planAtrip" />
-
-    </LinearLayout>
-
-    <LinearLayout
-    style="@style/LinearLayoutStyle"
-        android:layout_weight="1"
-        android:weightSum="2">
-        <Button
-            android:id="@+id/btViewTrips"
-            style="@style/ButtonStyleHome"
-            android:text="@string/bt_viewTrips"/>
-        <Button
-            android:id="@+id/btReviewsFeedback"
-            style="@style/ButtonStyleHome"
-            android:text="@string/bt_reviewsFeedback"/>
-
-    </LinearLayout>
-
-
-</LinearLayout>
+</RelativeLayout>
